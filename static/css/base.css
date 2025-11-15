@@ -6,3 +6,56 @@ h1 {
     height: 300px;
     width: auto;
 }
+
+/* NAVBAR BASE */
+.navbar {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background: #ffffffcc;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* NAVBAR LINKS */
+.navbar a {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+}
+
+/* HOVER ANIMATION (underline slide-in) */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #007aff; /* Apple blue */
+    transition: width 0.25s ease;
+}
+
+.navbar a:hover {
+    color: #007aff;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+}
